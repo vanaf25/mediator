@@ -87,8 +87,9 @@ const ProfilePage = () => {
                     <h1 className="text-3xl sm:text-4xl font-bold">{mediator.fullName}</h1>
                     <p className="text-lg sm:text-xl">Location: {mediator.city}, {mediator.state}</p>
                     <p className="text-lg sm:text-xl">Experience: {mediator.experience} years</p>
+                    <p className="text-lg sm:text-xl">Email: {mediator.email || "Not Specified"}</p>
                     <p className="text-lg sm:text-xl">Phone: {mediator.phone || "Not Specified"}</p>
-                   {/* <p className="text-lg sm:text-xl">Mission Statement: {mediator.missionStatement || "Not Specified"}</p>
+                    {/* <p className="text-lg sm:text-xl">Mission Statement: {mediator.missionStatement || "Not Specified"}</p>
                     <p className="text-lg sm:text-xl">Hourly Rate: {mediator.hourlyRate || 'Not specified'}</p>*/}
                 </div>
             </div>

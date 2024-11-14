@@ -11,6 +11,7 @@ const profileSchema = z.object({
   phone: z.string().min(10, 'Phone number is required'),
   fullName: z.string().min(2, 'Full name is required'),
   expertise: z.string().optional(),
+  email:z.string().email(),
   experience: z.string().optional(),
   technology: z.string().optional(),
   education: z.string().optional(),
@@ -148,6 +149,15 @@ export default function Profile() {
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
             {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <input
+                type="email"
+                {...register('email')}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+            {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
           </div>
 
           <div>
