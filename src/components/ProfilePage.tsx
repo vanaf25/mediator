@@ -88,8 +88,8 @@ const ProfilePage = () => {
                     <p className="text-lg sm:text-xl">Location: {mediator.city}, {mediator.state}</p>
                     <p className="text-lg sm:text-xl">Experience: {mediator.experience} years</p>
                     <p className="text-lg sm:text-xl">Phone: {mediator.phone || "Not Specified"}</p>
-                    <p className="text-lg sm:text-xl">Mission Statement: {mediator.missionStatement || "Not Specified"}</p>
-                    <p className="text-lg sm:text-xl">Hourly Rate: {mediator.hourlyRate || 'Not specified'}</p>
+                   {/* <p className="text-lg sm:text-xl">Mission Statement: {mediator.missionStatement || "Not Specified"}</p>
+                    <p className="text-lg sm:text-xl">Hourly Rate: {mediator.hourlyRate || 'Not specified'}</p>*/}
                 </div>
             </div>
             {infoBlocks.map((block, index) => (
