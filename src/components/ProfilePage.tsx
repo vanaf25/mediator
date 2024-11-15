@@ -53,7 +53,7 @@ const ProfilePage = () => {
     ];
 
     return (
-        <div className="p-4  space-y-6">
+        <div className="p-2 max-w-[900px] m-auto  space-y-6">
             <div
                 style={{
                     width:"100%",
@@ -93,23 +93,28 @@ const ProfilePage = () => {
                     <p className="text-lg sm:text-xl">Hourly Rate: {mediator.hourlyRate || 'Not specified'}</p>*/}
                 </div>
             </div>
-            {infoBlocks.map((block, index) => (
+            {infoBlocks.filter(block=>block?.items?.length).map((block, index) => (
                 <div
                     key={index}
                     className={`flex flex-col sm:flex-row ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center space-y-6 sm:space-y-0 sm:space-x-6 bg-white shadow-md rounded-lg overflow-hidden`}
                     style={{ margin: '20px 0', padding: '20px' }}
                 >
-                    <div className="w-full sm:w-1/2">
-                        <img src={block.img} alt={`${block.title} Image`} className="w-full h-auto rounded-lg shadow-lg" />
+                    <div className="w-full sm:w-1/2 flex justify-center">
+                        <img
+                            src={block.img}
+                            alt={`${block.title} Image`}
+                            className="max-w-[250px] sm:max-w-[300px]
+                             h-auto rounded-lg shadow-lg"
+                        />
                     </div>
                     <div className="w-full sm:w-1/2 space-y-4">
                         <h2 className="text-2xl sm:text-3xl font-bold">{block.title}</h2>
                         <div className="flex flex-wrap gap-3 mt-2">
-                            {block.items && block.items.length > 0 ? (
+                        {block.items && block.items.length > 0 ? (
                                 block.items.map((item, itemIndex) => (
                                     <span
                                         key={itemIndex}
-                                        className={`${block.bgColor} ${block.textColor} px-4 py-2 rounded-full text-sm sm:text-lg`}
+                                        className={`${block.bgColor} ${block.textColor} px-4 block py-2 rounded-full text-sm sm:text-lg`}
                                     >
                                         {item}
                                     </span>
