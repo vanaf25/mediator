@@ -48,9 +48,9 @@ const ProfilePage = () => {
         { title: 'Languages', items: mediator.languages, bgColor: 'bg-purple-50', textColor: 'text-purple-700', img: img4 },
         { title: 'Certifications', items: mediator.certifications, bgColor: 'bg-red-50', textColor: 'text-red-700', img: img5 },
         { title: 'Services', items: mediator.services, bgColor: 'bg-yellow-50', textColor: 'text-yellow-700', img: img6 },
-        { title: 'Testimonials', items: ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet modi non sequi suscipit voluptatem. Accusamus aliquid deleniti earum, error fugiat laboriosam ratione velit? Aperiam debitis eius ex fugiat illo maxime mollitia nihil numquam quibusdam velit. Beatae dolore et fuga iure minus odio perspiciatis? Illo ipsa libero omnis, saepe voluptates voluptatibus!","TEsr23423"], bgColor: 'bg-green-50', textColor: 'text-green-700', img: img7 },
+        { title: 'Testimonials', items:mediator.testimonials, bgColor: 'bg-green-50', textColor: 'text-green-700', img: img7 },
     ];
-
+//["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet modi non sequi suscipit voluptatem. Accusamus aliquid deleniti earum, error fugiat laboriosam ratione velit? Aperiam debitis eius ex fugiat illo maxime mollitia nihil numquam quibusdam velit. Beatae dolore et fuga iure minus odio perspiciatis? Illo ipsa libero omnis, saepe voluptates voluptatibus!","TEsr23423"]
     return (
         <div className="max-w-[900px] m-auto  space-y-6">
             <p></p>
