@@ -41,7 +41,6 @@ const ProfilePage = () => {
     if (!mediator) {
         return <div>Loading...</div>;
     }
-
     const infoBlocks = [
         { title: 'Expertise', items: mediator.expertise, bgColor: 'bg-blue-50', textColor: 'text-blue-700', img: img1 },
         { title: 'Education', items: mediator.education, bgColor: 'bg-green-50', textColor: 'text-green-700', img: img2 },
@@ -49,11 +48,12 @@ const ProfilePage = () => {
         { title: 'Languages', items: mediator.languages, bgColor: 'bg-purple-50', textColor: 'text-purple-700', img: img4 },
         { title: 'Certifications', items: mediator.certifications, bgColor: 'bg-red-50', textColor: 'text-red-700', img: img5 },
         { title: 'Services', items: mediator.services, bgColor: 'bg-yellow-50', textColor: 'text-yellow-700', img: img6 },
-        { title: 'Testimonials', items: mediator.testimonials, bgColor: 'bg-green-50', textColor: 'text-green-700', img: img7 },
+        { title: 'Testimonials', items: ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet modi non sequi suscipit voluptatem. Accusamus aliquid deleniti earum, error fugiat laboriosam ratione velit? Aperiam debitis eius ex fugiat illo maxime mollitia nihil numquam quibusdam velit. Beatae dolore et fuga iure minus odio perspiciatis? Illo ipsa libero omnis, saepe voluptates voluptatibus!","TEsr23423"], bgColor: 'bg-green-50', textColor: 'text-green-700', img: img7 },
     ];
 
     return (
-        <div className="p-2 max-w-[900px] m-auto  space-y-6">
+        <div className="max-w-[900px] m-auto  space-y-6">
+            <p></p>
             <div
                 style={{
                     width:"100%",
@@ -99,25 +99,32 @@ const ProfilePage = () => {
                     className={`flex flex-col sm:flex-row ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center space-y-6 sm:space-y-0 sm:space-x-6 bg-white shadow-md rounded-lg overflow-hidden`}
                     style={{ margin: '20px 0', padding: '20px' }}
                 >
-                    <div className="w-full sm:w-1/2 flex justify-center">
+                    {block.title!=="Testimonials" &&  <div className="w-full sm:w-1/2 flex justify-center">
                         <img
                             src={block.img}
                             alt={`${block.title} Image`}
                             className="max-w-[250px] sm:max-w-[300px]
                              h-auto rounded-lg shadow-lg"
                         />
-                    </div>
-                    <div className="w-full sm:w-1/2 space-y-4">
+                    </div>}
+                    <div className={`w-full ${block.title !== "Testimonials" ? "sm:w-1/2" : "sm:w-full"}
+                     space-y-4`}>
                         <h2 className="text-2xl sm:text-3xl font-bold">{block.title}</h2>
                         <div className="flex flex-wrap gap-3 mt-2">
-                        {block.items && block.items.length > 0 ? (
+                            {block.items && block.items.length > 0 ? (
                                 block.items.map((item, itemIndex) => (
-                                    <span
+                                    <div
                                         key={itemIndex}
-                                        className={`${block.bgColor} ${block.textColor} px-4 block py-2 rounded-full text-sm sm:text-lg`}
+                                        className={`${block.bgColor} ${block.textColor} px-4 py-2 block rounded-3xl text-sm sm:text-lg`}
+                                        style={{
+                                            maxWidth: '100%',
+                                            wordWrap: 'break-word',
+                                            overflowWrap: 'break-word',
+                                            whiteSpace: 'normal',
+                                        }}
                                     >
                                         {item}
-                                    </span>
+                                    </div>
                                 ))
                             ) : (
                                 <p className="text-gray-500">No information available</p>
